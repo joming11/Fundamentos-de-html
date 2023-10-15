@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.">
+	<title>Document</title>
+</head>
+<body>
+	<!-- comment -->
+	<p>H<sub>2</sub>O</p>
+	<p>E=mc<sup>2</sup></p>
+	<p><mark>Sub</mark></p>
+	<p><small>contract - conditions</small></p>
+	<p><blockquote>cita referencial</blockquote></p>
+	<p><cite>Simón Bolívar</cite></p>
+	<p><pre>texto preformateado
+	- respeta saltos de linea
+    - y cierta estructura
+    </pre>
+</p>
+<hr>
+<!-- etiquetas de bloque vs etiquetas de linea
+	bloque
+	ocupan el 100% del viewport
+	generan saltos de linea
+	div = bloque - sin carga semantica
+	h1,h2,h3... = bloque
+	p = bloque
+	header, section, article, aside, footer, main = bloque
+
+	inline
+	solo ocupan tanto espacio como su contenido
+	span = linea - sin carga semantica
+	blockquote = inline
+	sub , sup, em, stron, bold = inline
+-->
+<!-- los scripts convencionalmente van antes de cerrar el body -->
+<script type="text/javascript" src="sihubieraunjs.js"></script>
+<!-- atributos de ol
+	start = numero para comenzar los items
+	reversed
+	type = "A","a","I","i"
+	atributos de ul
+	type = "disc", "circle","square"
+-->
+<table>
+	<tr><!--columna-->
+		<td>Nombre</td><!--fila-->
+		<td>Tipo</td>
+		<td>poder</td>
+	</tr>
+	<tr>
+		<td>Ichigo</td>
+		<td>Shinigami sustituto</td>
+		<td>Getsuga tensho</td>
+	</tr>
+	<tr>
+		<td>Kempachi</td>
+		<td>Shinigami Capitan</td>
+		<td>Kendo</td>
+	</tr>
+	<tr>
+		<td>Rukia</td>
+		<td>Shinigami</td>
+		<td>tsugi no mai</td>
+	</tr>
+</table>
+<table>
+	<thead>
+		<tr>
+			<th colspan="3">Sociedad de almas</th>
+		</tr>
+		<tr>
+			<th>Nombre</th><!--fila rowspan-->
+			<th>Tipo</th>
+			<th>poder</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ichigo</td>
+			<td>Shinigami sustituto</td>
+			<td>Getsuga tensho</td>
+		</tr>
+		<tr>
+			<td>Kempachi</td>
+			<td>Shinigami Capitan</td>
+			<td>Kendo</td>
+		</tr>
+		<tr>
+			<td>Rukia</td>
+			<td>Shinigami</td>
+			<td>tsugi no mai</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="3">Bleach creado por tite kubo</th>
+		</tr>
+	</tfoot>
+</table>
+<hr>
+<h2> enlaces </h2>
+<!-- las anchor tiene display inline
+	taget = "_blank" para abrir el enlace externo en una nueva pestaña
+	agregar rel="nofollow"
+	para agregar una image como anchor
+	primero la etiqueta a, luego el img -->
+
+<!--navegacion interna
+	secciones importantes donde queremos movernos si el landing es largo
+	colocamos un ID, id="header"
+	para tener un temario
+	se crean las anchor con el nombre del archivo
+	mas #seccion a las que nos queremos mover
+	ej: index.html#footer
+-->
+<a href="mailto:njose0791@gmail.com">correo electronico</a>
+<a href="tel:0419-7654321">enlace a tlf</a>
+<a href="https//:api.whatsapp.com/send?phone=05804126262589&text=hola">enlace a Whatsapp</a>
+<!--interactividad 
+se pueden disparar eventos desde html aunque es una mala practica-->
+<button onclick="alert('Hola usuario')">boton</button>
+<!--acordeon html -->
+<details>
+	<summary> titulo</summary>
+	<article>
+		<h3>contenido del acordeon</h3>
+		<p>contenido 1</p>
+		<p>contenido 2</p>
+		<p>contenido 3</p>
+		<img src="" alt="imagen rota">
+	</article>
+</details>
+<hr>
+<!--audio y video -->
+<audio src="" controls autoplay loop muted preload></audio>
+<!-- poster es una imagen que se suporne al video mientras espera por la reproduccion -->
+<video src="" controls preload poster="img/imagen_poster.jpg">
+</video>
+<br>
+<iframe src="otrositio.html" frameborder="1"></iframe>
+<!--form-->
+<!-- input display inline
+	form action="" method="" autocomplete=""
+		label for="user">usuario</label>
+		text name=""(nombre de variable de formulario) id="user" readonly, disable, placeholder, required
+		pattern="" title="el campo solo acepta letras"
+		radio
+		checkbox
+		date
+		color
+		button value="boton"
+		submit
+		reset
+		file multiple(attr bool)
+		hidden name="variable" value="valorVal"
+		email
+		address
+		number
+		tel
+		password
+		search
+		textarea
+		select name="" id="" multiple
+			option value=""
+		-->
+	<!-- ///como usar los selects, radios, checkbox/// -->
+	<form action="">
+		<select name="idioma" id="" multiple>
+			<option value="">Elige una opcion</option>
+			<option value="es">español</option>
+			<option value="en">english</option>
+			<option value="fr">frances</option>
+			<option value="it" selected>italiano</option>
+			<option value="pt">portugues</option>
+		</select>
+		<p>Elige un lenguaje de programacion</p>
+		<!-- si el valor name es diferente, se podran marcar todas y rompera la idea del radio button -->
+		<input type="radio" name="lenguaje" id="radio-js" value="js">
+		<label for="radio-js">Javascript</label>
+		<input type="radio" name="lenguaje" id="radio-py" value="py" checked>
+		<label for="radio-py">Python</label>
+		<input type="radio" name="lenguaje" id="radio-php" value="php">
+		<label for="radio-php">Php</label>
+		<p>Elige tus intereses</p>
+		<label>
+			<input type="checkbox" name="intereses" value="sports"> Deportes
+		</label>
+		<label>
+			<input type="checkbox" name="intereses" value="movies"> Peliculas
+		</label>
+		<label>
+			<input type="checkbox" name="intereses" value="series"> Series
+		</label>
+		<input type="submit"> <input type="reset">	
+	</form>
+	<br>
+	<br>
+	<br>
+	<!-- formulario de contacto-->
+	<form action="" method="POST">
+		<input type="text" name="nombre" placeholder="escribe tu nombre" pattern="- ^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Solo se aceptan letras y espacios en blanco" required>
+		<br>
+		<input type="email" name="correo" placeholder="escribe tu correo" pattern="- ^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" title="formato de correo invalido" required>
+		<br>
+		<textarea name="comentarios" required></textarea>
+		<br>
+		<input type="submit">
+	</form>
+	<!-- data atributos -->
+	<ul>
+		<li data-id="1" data-name="spring">primavera</li>
+		<li data-id="2" data-name="summer">verano</li>
+		<li data-id="3" data-name="autumn">otoño</li>
+		<li data-id="4" data-name="winter">invierno</li>
+	</ul>
+	<!-- meta etiquetas (HEAD)-->
+	<!-- title
+	description
+	link rel="canonical" href="http://dominio.com/la-url-canonica" 
+	favicon - formato png - tamaño minimo 16 x 16
+	el formato .ico solo funciona en browser de pc
+	no en movil
+	link rel="icon" href="path"
+	link rel="apple-touch-icon" href="path"
+	apple-touch-icon	
+	meta name="theme-color" content="#f60"--> 
+	<!-- Open Graph 
+		Compartit contenido en Redes Sociales
+		<meta property="og:title" content="title" HEAD> 
+		<meta property="og:description" content="description" HEAD> 
+		<meta property="og:image" content="https://dominio.com/img/foto.jpg" HEAD> 
+		<meta property="og:url" content="https://dominio.com/index.html o sin el index" HEAD>
+		<meta name="twitter.card" content="summary"> 
+		<meta name="twitter.site" content="@njose07"> 
+		-->
+		<!-- /////Accesibilidad en la web ///// 
+			Ayudar a las personas con discapacidad
+			agregar a los elementos el atributo role
+			para dar contexto semantico al codigo -->
+	<h3 role="title">Accesibilidad</h3>
+	<ul>
+		<!-- tabindex indica el nivel de importancia en la lectura -->
+		<li tabindex="1" role="listitem">Acceso 1</li>
+		<li tabindex="2" role="listitem">Acceso 2</li>
+		<li tabindex="3" role="listitem">Acceso 3</li>
+		<li tabindex="4" role="listitem">Acceso 4</li>
+	</ul>
+	<a role="link" aria-label="en este enlace encontraras mas informacion" href="#"></a>
+</body>
+</html>
